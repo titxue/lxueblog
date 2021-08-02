@@ -1,37 +1,16 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <div class="wrapper">
+    <header>{{ msg }}</header>
+    <main>
+      <div class="left">左</div>
+      <div class="center">内容</div>
+      <div class="right">右</div>
+    </main>
+    <footer>bottom</footer>
+  </div>
 
-  <p>
-    Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a
-      href="https://marketplace.visualstudio.com/items?itemName=octref.vetur"
-      target="_blank"
-    >
-      Vetur
-    </a>
-    or
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-    (if using
-    <code>&lt;script setup&gt;</code>)
-  </p>
 
-  <p>See <code>README.md</code> for more information.</p>
-
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Docs
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-  </p>
-
-  <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  
 </template>
 
 <script lang="ts">
@@ -45,26 +24,37 @@ export default defineComponent({
     }
   },
   setup: () => {
-    const count = ref(0)
-    return { count }
+    // const count = ref(0)
+    // return { count }
   }
 })
 </script>
 
 <style scoped>
-a {
-  color: #42b983;
+.wrapper{
+  resize: both;
+  overflow: hidden;
+  /* width: 100500px; */
+  height: 100vh;
+  border: 1px solid black;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+}
+header,footer,.left,.right{
+  flex: 0 0 10%;
+  border: 1px solid red;
+  box-sizing: border-box;
+  text-align: center;
+}
+main{
+  flex: 1 1 auto;
+  display: flex;
+
+}
+.center{
+  flex: 1 1 auto;
+  text-align: center;
 }
 
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
-}
 </style>
